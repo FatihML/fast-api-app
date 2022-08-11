@@ -39,7 +39,7 @@ def resize(image):
 app = FastAPI()
 app.mount('/static', StaticFiles(directory='static'),name='static')
 
-@app.post("/uploadfiles", response_class=HTMLResponse)
+@app.post("/uploadfiles/", response_class=HTMLResponse)
 async def create_upload_files(files: List[UploadFile] = File(...)):
     images = []
     for file in files:
